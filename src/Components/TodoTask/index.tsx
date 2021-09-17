@@ -1,10 +1,13 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { ITask } from '../../Interfaces';
 
 interface Props {
-    createdTask: ITask
+    createdTask: ITask;
+    deleteTask(taskNameToDelete: string): void;
 }
-const TodoTask = ({ createdTask }:Props) => (
+
+const TodoTask = ({ createdTask, deleteTask }:Props) => (
   <ul>
     <li>
       {createdTask.taskName}
@@ -14,6 +17,14 @@ const TodoTask = ({ createdTask }:Props) => (
       {' '}
       days
     </li>
+    <button
+      type="button"
+      onClick={() => {
+        deleteTask(createdTask.taskName);
+      }}
+    >
+      Delete
+    </button>
   </ul>
 );
 

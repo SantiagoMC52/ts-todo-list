@@ -25,6 +25,10 @@ const App:FC = () => {
     setDeadline(0);
   };
 
+  const deleteTask = (taskNameToDelete: string): void => {
+    setTodoList(todoList.filter((taskDel) => taskDel.taskName !== taskNameToDelete));
+  };
+
   return (
     <div>
       <div>
@@ -36,7 +40,7 @@ const App:FC = () => {
         {
           todoList.map((
             todoTask: ITask
-          ) => <TodoTask key={todoTask.taskName} createdTask={todoTask} />)
+          ) => <TodoTask key={todoTask.taskName} createdTask={todoTask} deleteTask={deleteTask} />)
         }
       </div>
     </div>
