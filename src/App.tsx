@@ -5,6 +5,7 @@ import TodoTask from './Components/TodoTask';
 const App:FC = () => {
   const [task, setTask] = useState<string>('');
   const [deadLine, setDeadline] = useState<number>(0);
+  const [done, setDone] = useState<boolean>(false);
   const [todoList, setTodoList] = useState<ITask[]>([]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -18,15 +19,23 @@ const App:FC = () => {
   const addTask = (): void => {
     const newTask = {
       taskName: task,
-      deadline: deadLine
+      deadline: deadLine,
+      completed: done
     };
     setTodoList([...todoList, newTask]);
     setTask('');
     setDeadline(0);
+    setDone(false);
   };
 
   const deleteTask = (taskNameToDelete: string): void => {
     setTodoList(todoList.filter((taskDel) => taskDel.taskName !== taskNameToDelete));
+  };
+
+  const doneTask = (taskNameDone: string): void => {
+    setTodoList(todoList.map((item) => (
+      item.taskName === taskNameDone ? { ...item, completed: !item.completed } : item
+    )));
   };
 
   return (
@@ -40,7 +49,14 @@ const App:FC = () => {
         {
           todoList.map((
             todoTask: ITask
-          ) => <TodoTask key={todoTask.taskName} createdTask={todoTask} deleteTask={deleteTask} />)
+          ) => (
+            <TodoTask
+              key={todoTask.taskName}
+              createdTask={todoTask}
+              deleteTask={deleteTask}
+              doneTask={doneTask}
+            />
+          ))
         }
       </div>
     </div>
