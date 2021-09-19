@@ -10,7 +10,7 @@ interface Props {
 }
 
 const TodoTask = ({ createdTask, deleteTask, doneTask }:Props) => (
-  <>
+  <div>
     <ul>
       <li className={!createdTask.completed ? 'task-item' : 'task-done'}>
         {createdTask.taskName}
@@ -36,7 +36,7 @@ const TodoTask = ({ createdTask, deleteTask, doneTask }:Props) => (
         </button>
       </li>
     </ul>
-  </>
+  </div>
 );
 
 export default TodoTask;

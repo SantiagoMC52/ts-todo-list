@@ -1,6 +1,11 @@
 import React, { ChangeEvent, FC, useState } from 'react';
 import { ITask } from './Interfaces';
 import TodoTask from './Components/TodoTask';
+import {
+  AddBtn,
+  DaysInput,
+  GlobalStyle, Header, InputsContainer, MainContainer, TaskInput, TodoList
+} from './AppStyle';
 
 const App:FC = () => {
   const [task, setTask] = useState<string>('');
@@ -39,13 +44,29 @@ const App:FC = () => {
   };
 
   return (
-    <div>
-      <div>
-        <input type="text" placeholder="Task..." name="task" value={task} onChange={handleChange} />
-        <input type="number" placeholder="Deadlibe (in days...)" name="deadline" value={deadLine} onChange={handleChange} />
-        <button type="button" onClick={addTask}>Add task</button>
-      </div>
-      <div>
+    <MainContainer>
+      <GlobalStyle />
+      <Header>
+        <InputsContainer>
+          <TaskInput
+            placeholder="Task..."
+            name="task"
+            value={task}
+            size="270px"
+            onChange={handleChange}
+          />
+          <DaysInput
+            type="number"
+            placeholder="Deadlibe (in days...)"
+            name="deadline"
+            min="0"
+            value={deadLine}
+            onChange={handleChange}
+          />
+        </InputsContainer>
+        <AddBtn type="button" onClick={addTask}>Add task</AddBtn>
+      </Header>
+      <TodoList>
         {
           todoList.map((
             todoTask: ITask
@@ -58,8 +79,8 @@ const App:FC = () => {
             />
           ))
         }
-      </div>
-    </div>
+      </TodoList>
+    </MainContainer>
   );
 };
 
