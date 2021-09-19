@@ -69,7 +69,7 @@ export const AddBtn = styled('button')`
     padding: 1em;
     border: none;
     border-radius: 6px;
-    margin-left: 70px;
+    margin-left: 20px;
 `;
 
 export const TodoList = styled('div')`
@@ -77,8 +77,8 @@ export const TodoList = styled('div')`
     flex-direction: column;
     align-items: center;
     background-color: #444444;
-    margin-top: 5px;
+    margin: 5px 0 10px 0;
     padding: 10px;
-    flex: 80%;
+    flex: 70%;
     width: 50%;
 `;

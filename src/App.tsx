@@ -5,7 +5,7 @@ import {
   AddBtn,
   DaysInput,
   GlobalStyle, Header, InputsContainer, MainContainer, TaskInput, TodoList
-} from './AppStyle';
+} from './styles';
 
 const App:FC = () => {
   const [task, setTask] = useState<string>('');

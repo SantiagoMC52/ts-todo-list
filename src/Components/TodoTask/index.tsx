@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { ITask } from '../../Interfaces';
-import '../../styles.css';
+import {
+  ButtonsContainer, TaskInput, DoneBtn, DeleteBtn, TaskContainer
+} from './styles';
 
 interface Props {
     createdTask: ITask;
@@ -10,33 +12,35 @@ interface Props {
 }
 
 const TodoTask = ({ createdTask, deleteTask, doneTask }:Props) => (
-  <div>
-    <ul>
-      <li className={!createdTask.completed ? 'task-item' : 'task-done'}>
-        {createdTask.taskName}
-        {' '}
-        {createdTask.deadline}
-        {' '}
-        days
-        <button
-          type="button"
-          onClick={() => {
-            deleteTask(createdTask.taskName);
-          }}
-        >
-          Delete
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            doneTask(createdTask.taskName);
-          }}
-        >
-          Done
-        </button>
-      </li>
-    </ul>
-  </div>
+  <TaskInput className={!createdTask.completed ? 'task-item' : 'task-done'}>
+    <TaskContainer>
+      {createdTask.taskName}
+      {' '}
+      in
+      {' '}
+      {createdTask.deadline}
+      {' '}
+      days
+    </TaskContainer>
+    <ButtonsContainer>
+      <DeleteBtn
+        type="button"
+        onClick={() => {
+          deleteTask(createdTask.taskName);
+        }}
+      >
+        Delete
+      </DeleteBtn>
+      <DoneBtn
+        type="button"
+        onClick={() => {
+          doneTask(createdTask.taskName);
+        }}
+      >
+        Done
+      </DoneBtn>
+    </ButtonsContainer>
+  </TaskInput>
 );
 
 export default TodoTask;
