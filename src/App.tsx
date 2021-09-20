@@ -56,8 +56,7 @@ const App:FC = () => {
             onChange={handleChange}
           />
           <DaysInput
-            type="number"
-            placeholder="Deadlibe (in days...)"
+            placeholder="Deadline (in days...)"
             name="deadline"
             min="0"
             value={deadLine}
