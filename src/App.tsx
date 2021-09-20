@@ -4,7 +4,7 @@ import TodoTask from './Components/TodoTask';
 import {
   AddBtn,
   DaysInput,
-  GlobalStyle, Header, InputsContainer, MainContainer, TaskInput, TodoList
+  GlobalStyle, Header, InputsContainer, MainContainer, NoTask, TaskInput, TodoList
 } from './styles';
 
 const App:FC = () => {
@@ -68,16 +68,20 @@ const App:FC = () => {
       </Header>
       <TodoList>
         {
-          todoList.map((
-            todoTask: ITask
-          ) => (
-            <TodoTask
-              key={todoTask.taskName}
-              createdTask={todoTask}
-              deleteTask={deleteTask}
-              doneTask={doneTask}
-            />
-          ))
+          todoList.length > 0
+            ? (
+
+              todoList.map((
+                todoTask: ITask
+              ) => (
+                <TodoTask
+                  key={todoTask.taskName}
+                  createdTask={todoTask}
+                  deleteTask={deleteTask}
+                  doneTask={doneTask}
+                />
+              ))
+            ) : <NoTask>There are no tasks</NoTask>
         }
       </TodoList>
     </MainContainer>

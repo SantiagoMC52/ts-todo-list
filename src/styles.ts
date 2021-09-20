@@ -83,3 +83,12 @@ export const TodoList = styled('div')`
     flex: 70%;
     width: 50%;
 `;
+
+export const NoTask = styled('h2')`
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-top: 2em;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+`;
