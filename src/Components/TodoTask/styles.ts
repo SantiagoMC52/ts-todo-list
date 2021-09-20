@@ -27,10 +27,7 @@ export const DeleteBtn = styled('button')`
     padding: .5em;
     border: none;
     border-radius: 6px;
-
-    :hover{
-        cursor: pointer;
-    }
+    cursor: pointer;
 `;
 
 export const DoneBtn = styled(DeleteBtn)`

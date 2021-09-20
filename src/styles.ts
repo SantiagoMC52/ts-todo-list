@@ -70,10 +70,7 @@ export const AddBtn = styled('button')`
     border: none;
     border-radius: 6px;
     margin-left: 20px;
-
-    :hover{
-        cursor: pointer;
-    }
+    cursor: pointer;
 `;
 
 export const TodoList = styled('div')`
