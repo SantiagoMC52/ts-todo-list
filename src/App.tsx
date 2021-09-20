@@ -9,7 +9,7 @@ import {
 
 const App:FC = () => {
   const [task, setTask] = useState<string>('');
-  const [deadLine, setDeadline] = useState<number>(0);
+  const [deadLine, setDeadline] = useState<number | string>('');
   const [done, setDone] = useState<boolean>(false);
   const [todoList, setTodoList] = useState<ITask[]>([]);
 
