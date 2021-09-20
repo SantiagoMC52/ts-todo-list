@@ -12,8 +12,8 @@ interface Props {
 }
 
 const TodoTask = ({ createdTask, deleteTask, doneTask }:Props) => (
-  <TaskInput className={!createdTask.completed ? 'task-item' : 'task-done'}>
-    <TaskContainer>
+  <TaskInput>
+    <TaskContainer decoration={!createdTask.completed ? '' : 'line-through'}>
       {createdTask.taskName}
       {' '}
       in

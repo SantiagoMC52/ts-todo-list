@@ -11,8 +11,9 @@ export const TaskInput = styled('div')`
     width: 60%;
 `;
 
-export const TaskContainer = styled('div')`
+export const TaskContainer = styled('div')<{decoration: string}>`
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: ${(props) => props.decoration};
 `;
 
 export const ButtonsContainer = styled('div')`
