@@ -20,16 +20,18 @@ export const MainContainer = styled('div')`
 
 export const Header = styled('div')`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #444444;
     flex: 30%;
     margin-top: 2em;
-    width: 50%;
+    width: 80%;
 `;
 
 export const InputsContainer = styled('div')`
     display: flex;
+    flex-direction: column;
     align-items: center;
 `;
 
@@ -69,7 +71,7 @@ export const AddBtn = styled('button')`
     padding: 1em;
     border: none;
     border-radius: 6px;
-    margin-left: 20px;
+    margin: 0 0 4px 0;
     cursor: pointer;
 `;
 
@@ -81,7 +83,7 @@ export const TodoList = styled('div')`
     margin: 5px 0 10px 0;
     padding: 10px;
     flex: 70%;
-    width: 50%;
+    width: 100%;
 `;
 
 export const NoTask = styled('h2')`

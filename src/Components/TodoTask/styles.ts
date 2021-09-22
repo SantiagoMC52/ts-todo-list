@@ -8,7 +8,11 @@ export const TaskInput = styled('div')`
     margin-top: 3px;
     background-color: #3A3A3A;
     color: white;
-    width: 60%;
+    min-width: 70%;
+
+    @media(min-width:820px){
+        min-width: 30%;
+    }
 `;
 
 export const TaskContainer = styled('div')<{decoration: string}>`
